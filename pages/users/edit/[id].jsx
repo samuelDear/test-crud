@@ -1,11 +1,19 @@
-import { useState } from 'react';
-import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Header, HeadPage } from '../../components';
-import { userService } from '../../services/users.service';
-import classes from '../../styles/pages/users/Create.module.css';
+import { useRouter } from 'next/router';
+import { Header, HeadPage } from '../../../components';
+import { userService } from '../../../services/users.service';
+import classes from '../../../styles/pages/users/Create.module.css';
 
-const CreateUser = () => {
+export async function getServerSideProps({ params }) {
+  const user = await userService.getUserById(params.id);
+
+  return {
+    props: { user },
+  };
+}
+
+const EditUser = ({ user }) => {
   const router = useRouter();
   const [submiting, setSubmiting] = useState(false);
   const [form, setForm] = useState({
@@ -16,6 +24,14 @@ const CreateUser = () => {
   });
   const { name, email, successMsg, errorMsg } = form;
 
+  useEffect(() => {
+    setForm(prevState => ({
+      ...prevState,
+      name: user.name,
+      email: user.email,
+    }));
+  }, []);
+
   const handleSubmit = async e => {
     e.preventDefault();
     const params = {
@@ -25,10 +41,10 @@ const CreateUser = () => {
 
     try {
       setSubmiting(true);
-      userService.createUser(params);
+      userService.updateUser(user.id, params);
       setForm(prevState => ({
         ...prevState,
-        successMsg: 'User created',
+        successMsg: 'User Updated',
       }));
 
       setTimeout(() => {
@@ -55,11 +71,11 @@ const CreateUser = () => {
 
   return (
     <>
-      <HeadPage title="CMS - Create" />
+      <HeadPage title="CMS - Edit" />
       <Header />
       <main className={`w-full ${classes.mainBox}`}>
         <form onSubmit={handleSubmit} className={`${classes.formBox}`}>
-          <h1 className={`text-center ${classes.title}`}>Create New User</h1>
+          <h1 className={`text-center ${classes.title}`}>Update User</h1>
           {successMsg !== '' || errorMsg ? (
             <span
               className={`${
@@ -113,7 +129,7 @@ const CreateUser = () => {
                 email,
               )
             }>
-            Save
+            Update
           </button>
           <Link href="/users">
             <button type="button" className={`${classes.backBtn}`}>
@@ -126,4 +142,4 @@ const CreateUser = () => {
   );
 };
 
-export default CreateUser;
+export default EditUser;
