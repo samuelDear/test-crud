@@ -1,0 +1,193 @@
+.headerBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #002854;
+}
+
+.btnLogin {
+  background-color: #D168FF;
+  border-style: none;
+  padding: 10px 35px;
+  border-radius: 27px;
+  margin: 0 25px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FFF;
+  transition: 1s;
+}
+
+.logoTraumappHeader {
+  width: 35px;
+  height: 35px;
+}
+
+.logoBox {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px 10px 15px;
+}
+
+.logoName {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.17em;
+  margin: 10px 0px 10px 10px;
+  color: #FFF;
+  cursor: pointer;
+  user-select: none;
+};
+
+.btnLogin:hover{
+  background-color: #D168FF;
+  opacity: 0.8;
+}
+
+.userLogo {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+}
+
+.buttonNav {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  padding: 0px 15px;
+  color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: linear-gradient(360deg, rgba(0,0,0,0) 50%,#DF95FF 0);
+  background-size: 100% 200%;
+  background-position: 100% 100%;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.buttonNav:hover {
+  background-position: 100% 0;
+  color: #222;
+}
+
+.navBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.btnLoginBox {
+  display: flex;
+  align-items: center;
+  padding: 8px 0px;
+}
+
+.floatHeader {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  z-index: 9999;
+  transition: 1s;
+  background-color: #64068D;
+}
+
+.burguer {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  cursor: pointer;
+}
+
+.line {
+  width: 35px;
+  height: 3px;
+  display: block;
+  background-color: #FFF;
+  margin: 4px 20px;
+}
+
+.firstItemMobile {
+  margin-top: 5px;
+}
+
+.separationItem {
+  display: block;
+  width: 95%;
+  height: 1px;
+  background-color: #777;
+  margin: 3px auto;
+}
+
+.showFloatHeader {
+  opacity: 1;
+}
+
+.showMobile {
+  display: none;
+  @media only screen and (max-width : 950px): {
+    display: flex;
+  };
+}
+
+.buttonNavMobile {
+  color: #333;
+}
+
+.list {
+  background-color: #002854;
+  height: 0px;
+  transform: scaleY(0);
+  transition: 1s;
+}
+
+.listFloat {
+  height: 0px;
+  transform: scaleY(0);
+  transition: 1s;
+}
+
+.listActive {
+  transform: scaleY(1);
+}
+
+@media (max-width: 1000px) {
+  .headerBox {
+    background-color: #64068D;
+    padding: 0;
+  }
+}
+
+@media (max-width: 950px) {
+  .headerBox {
+    padding: 0;
+  }
+
+  .navBox {
+    flex-direction: column;
+    background-color: #F6F6F6;
+    margin: auto;
+    width: 95%;
+  }
+
+  .showMobile {
+    display: flex;
+  }
+
+  .showDesktop {
+    display: none;
+  }
+}
+
+@media (max-width: 300px) {
+  .logoName {
+    display: none;
+  }
+}
