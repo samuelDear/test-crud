@@ -1,26 +1,25 @@
-import { apiUrl } from 'config';
-import { fetchWrapper } from 'helpers';
+import { apiUrl, fetchUtil } from '../config';
 
 const baseUrl = `${apiUrl}/users`;
 
 const getAllUsers = () => {
-  return fetchWrapper.get(baseUrl);
+  return fetchUtil.get(baseUrl);
 };
 
 const getUserById = id => {
-  return fetchWrapper.get(`${baseUrl}/${id}`);
+  return fetchUtil.get(`${baseUrl}/${id}`);
 };
 
 const createUser = params => {
-  return fetchWrapper.post(baseUrl, params);
+  return fetchUtil.post(baseUrl, params);
 };
 
 const updateUser = (id, params) => {
-  return fetchWrapper.put(`${baseUrl}/${id}`, params);
+  return fetchUtil.put(`${baseUrl}/${id}`, params);
 };
 
 const deleteUser = id => {
-  return fetchWrapper.delete(`${baseUrl}/${id}`);
+  return fetchUtil.delete(`${baseUrl}/${id}`);
 };
 
 export const userService = {

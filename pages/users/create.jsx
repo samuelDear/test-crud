@@ -1,4 +1,4 @@
-import { Header, HeadPage } from '../components';
+import { Header, HeadPage } from '../../components';
 
 const CreateUser = () => {
   return (

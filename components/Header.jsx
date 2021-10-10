@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import LOGO_TRAUMAPP from '../public/images/logotraumapp.png';
 import classes from '../styles/components/Header.module.css';
@@ -28,7 +29,9 @@ const Header = () => {
           <h1 className={classes.logoName}>TraumApp</h1>
         </div>
         <nav className={`${classes.navBox} ${classes.showDesktop}`}>
-          <span className={classes.buttonNav}>About Us</span>
+          <Link href="/">
+            <span className={classes.buttonNav}>About Us</span>
+          </Link>
           <span className={classes.buttonNav}>Services</span>
           <span className={classes.buttonNav}>Contact</span>
           <div className={`${classes.btnLoginBox} ${classes.showDesktop}`}>
@@ -54,10 +57,13 @@ const Header = () => {
           activateAnimation ? classes.listActive : ''
         }`}>
         <nav className={classes.navBox}>
-          <span
-            className={`${classes.buttonNav} ${classes.buttonNavMobile} ${classes.firstItemMobile}`}>
-            About Us
-          </span>
+          <Link href="/">
+            <span
+              className={`${classes.buttonNav} ${classes.buttonNavMobile} ${classes.firstItemMobile}`}>
+              About Us
+            </span>
+          </Link>
+
           <span className={classes.separationItem}></span>
           <span className={`${classes.buttonNav} ${classes.buttonNavMobile}`}>
             Services

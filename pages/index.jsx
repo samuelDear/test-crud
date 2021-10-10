@@ -1,9 +1,12 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { Header, HeadPage } from '../components';
 import classes from '../styles/pages/index.module.css';
 import HOME_ICON from '../public/images/userGuide.svg';
 
 const Home = () => {
+  const router = useRouter();
+
   return (
     <>
       <HeadPage title="CMS - HOME" />
@@ -22,6 +25,7 @@ const Home = () => {
           <div className="flex flex-col items-start lg:items-center justify-start lg:flex-row">
             <button
               type="button"
+              onClick={() => router.push('/users')}
               className={`rounded-full py-4 px-8 font-bold ${classes.principalButton}`}>
               Edit Users
             </button>

@@ -1,0 +1,68 @@
+.mainBox {
+  padding: 30px;
+}
+
+.titlePage {
+  text-align: center;
+  font-weight: 600;
+  font-size: 32px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+}
+
+.rowBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.btnCommon {
+  border-radius: 9999px;
+  color: #111;
+  font-weight: 600;
+  color: #FFF;
+}
+
+.addUser {
+  padding: 10px 40px;
+  background: #49ABED;
+}
+
+.editUser {
+  padding: 10px 20px;
+  background: #49ABED;
+  margin: 0 10px;
+}
+
+.deleteUser {
+  padding: 10px 20px;
+  background: #c92424;
+  margin: 0 10px;
+}
+
+.optionCell {
+  display: flex;
+  justify-content: flex-end;
+  white-space: nowrap;
+}
+
+.tableHeader {
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px;
+  color: #AAB7C7;
+  text-align: center;
+}
+
+.rowOdd {
+  background-color: rgb(230, 231, 233);
+}
+
+.cellBox {
+  padding: 10px;
+}
+
+.quantityText {
+  font-weight: 600;
+  margin-top: 20px;
+  font-size: 18px;
+}
