@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Header, HeadPage } from '../components';
+import classes from '../../styles/pages/Users.module.css';
 
 const Users = () => {
   return (
