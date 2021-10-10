@@ -61,12 +61,6 @@
   transition: 0.5s;
 }
 
-.saveBtn:disabled,
-.saveBtn[disabled]{
-  background-color: #ccc;
-  color: #666;
-}
-
 .successMsg {
   text-align: center;
   font-weight: 500;

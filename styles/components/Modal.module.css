@@ -1,0 +1,30 @@
+.modalBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalBox {
+  width: 50vw;
+  min-width: 250px;
+  max-width: 700px;
+  background-color: #FFF;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+}
+
+.closeButton {
+  font-weight: 600;
+  font-size: 22px;
+  cursor: pointer;
+  user-select: none;
+  padding: 5px;
+  line-height: 11px;
+}

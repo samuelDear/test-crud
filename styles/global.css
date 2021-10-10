@@ -5,3 +5,9 @@
 body {
   background-color: #EEE;
 }
+
+button:disabled,
+button[disabled]{
+  background-color: #ccc;
+  color: #666;
+}

@@ -25,7 +25,7 @@ const CreateUser = () => {
 
     try {
       setSubmiting(true);
-      userService.createUser(params);
+      await userService.createUser(params);
       setForm(prevState => ({
         ...prevState,
         successMsg: 'User created',

@@ -36,7 +36,7 @@
   align-items: center;
 }
 
-.deleteUser {
+.deleteUser, .deleteModalBtn {
   padding: 10px;
   background: #c92424;
   margin: 0 10px;
@@ -71,4 +71,33 @@
   font-weight: 600;
   margin-top: 20px;
   font-size: 18px;
+}
+
+.titleModalDelete {
+  text-align: center;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.dscModalDelete {
+  font-size: 14px;
+  color: #777;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.btnModal {
+  margin-top: 15px;
+  border-radius: 12px;
+  color: #FFF;
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+  transition: 0.5s;
+  padding: 8px 20px;
+  min-width: 150px;
+}
+
+.backBtn {
+  background: #3579a7;
 }

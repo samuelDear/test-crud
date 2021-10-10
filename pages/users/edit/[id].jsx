@@ -41,7 +41,7 @@ const EditUser = ({ user }) => {
 
     try {
       setSubmiting(true);
-      userService.updateUser(user.id, params);
+      await userService.updateUser(user.id, params);
       setForm(prevState => ({
         ...prevState,
         successMsg: 'User Updated',

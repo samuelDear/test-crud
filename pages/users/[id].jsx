@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Header, HeadPage } from '../../components';
 import { userService } from '../../services/users.service';
@@ -12,7 +11,7 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-const EditUser = ({ user }) => {
+const ViewUser = ({ user }) => {
   return (
     <>
       <HeadPage title="CMS - View" />
@@ -55,4 +54,4 @@ const EditUser = ({ user }) => {
   );
 };
 
-export default EditUser;
+export default ViewUser;

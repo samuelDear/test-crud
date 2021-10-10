@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Header, HeadPage } from '../../components';
+import { Header, HeadPage, Modal } from '../../components';
 import { userService } from '../../services/users.service';
 import classes from '../../styles/pages/Users.module.css';
 import DELETE_IC from '../../public/images/icon/delete-black-ic.svg';
@@ -9,6 +9,9 @@ import EDIT_IC from '../../public/images/icon/edit-black-ic.svg';
 import VIEW_IC from '../../public/images/icon/visibility-black-ic.svg';
 
 const Users = () => {
+  const [showModal, setShowModal] = useState(false);
+  const [deleting, setDeleting] = useState(false);
+  const [deleteUser, setDeleteUser] = useState({});
   const [users, setUsers] = useState([
     {
       id: 10,
@@ -26,6 +29,20 @@ const Users = () => {
       alert('Error in request');
     }
   }, []);
+
+  const handleDeleteUser = async id => {
+    try {
+      setDeleting(true);
+      await userService.deleteUser(id);
+      setUsers(users => users.filter(u => u.id !== id));
+      setShowModal(false);
+      setDeleting(false);
+    } catch (error) {
+      // eslint-disable-next-line
+      alert('Error in request');
+      setDeleting(false);
+    }
+  };
 
   return (
     <>
@@ -75,7 +92,7 @@ const Users = () => {
                         src={VIEW_IC}
                         alt="Eye Icon"
                         title={`View User ${user.name}`}
-                        width={25}
+                        width={20}
                       />
                     </button>
                   </Link>
@@ -86,17 +103,21 @@ const Users = () => {
                         src={EDIT_IC}
                         alt="Edit Icon"
                         title={`Edit User ${user.name}`}
-                        width={25}
+                        width={20}
                       />
                     </button>
                   </Link>
                   <button
+                    onClick={() => {
+                      setDeleteUser(user);
+                      setShowModal(true);
+                    }}
                     className={`${classes.btnCommon} ${classes.deleteUser}`}>
                     <Image
                       src={DELETE_IC}
                       alt="Trash Icon"
                       title={`Delete User ${user.name}`}
-                      width={25}
+                      width={20}
                     />
                   </button>
                 </div>
@@ -106,6 +127,37 @@ const Users = () => {
         </div>
         <p className={classes.quantityText}>Quantity: {users.length}</p>
       </main>
+      {showModal && (
+        <Modal
+          closeModal={() => {
+            setShowModal(false);
+            setDeleteUser({});
+          }}>
+          <div className={`flex flex-col items-center`}>
+            <h1 className={classes.titleModalDelete}>Delete User</h1>
+            <p className={classes.dscModalDelete}>
+              are you sure to delete the user {deleteUser?.name}?
+            </p>
+            <button
+              type="button"
+              disabled={deleting}
+              onClick={() => handleDeleteUser(deleteUser?.id)}
+              className={`${classes.deleteModalBtn} ${classes.btnModal}`}>
+              Delete
+            </button>
+            <button
+              type="button"
+              disabled={deleting}
+              className={`${classes.backBtn} ${classes.btnModal}`}
+              onClick={() => {
+                setShowModal(false);
+                setDeleteUser({});
+              }}>
+              Back
+            </button>
+          </div>
+        </Modal>
+      )}
     </>
   );
 };
