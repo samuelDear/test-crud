@@ -28,15 +28,21 @@
 }
 
 .editUser {
-  padding: 10px 20px;
+  padding: 10px;
   background: #49ABED;
   margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .deleteUser {
-  padding: 10px 20px;
+  padding: 10px;
   background: #c92424;
   margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .optionCell {

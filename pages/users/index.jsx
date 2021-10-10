@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Header, HeadPage } from '../../components';
 import { userService } from '../../services/users.service';
 import classes from '../../styles/pages/Users.module.css';
+import DELETE_IC from '../../public/images/icon/delete-black-ic.svg';
+import EDIT_IC from '../../public/images/icon/edit-black-ic.svg';
+import VIEW_IC from '../../public/images/icon/visibility-black-ic.svg';
 
 const Users = () => {
   const [users, setUsers] = useState([
@@ -64,15 +68,36 @@ const Users = () => {
                 </div>
                 <div
                   className={`w-5/12 ${classes.optionCell} ${classes.cellBox}`}>
+                  <Link href={`/users/${user.id}`}>
+                    <button
+                      className={`${classes.btnCommon} ${classes.editUser}`}>
+                      <Image
+                        src={VIEW_IC}
+                        alt="Eye Icon"
+                        title={`View User ${user.name}`}
+                        width={25}
+                      />
+                    </button>
+                  </Link>
                   <Link href={`/users/edit/${user.id}`}>
                     <button
                       className={`${classes.btnCommon} ${classes.editUser}`}>
-                      Edit
+                      <Image
+                        src={EDIT_IC}
+                        alt="Edit Icon"
+                        title={`Edit User ${user.name}`}
+                        width={25}
+                      />
                     </button>
                   </Link>
                   <button
                     className={`${classes.btnCommon} ${classes.deleteUser}`}>
-                    Delete
+                    <Image
+                      src={DELETE_IC}
+                      alt="Trash Icon"
+                      title={`Delete User ${user.name}`}
+                      width={25}
+                    />
                   </button>
                 </div>
               </div>

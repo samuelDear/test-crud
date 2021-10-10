@@ -1,0 +1,45 @@
+.mainBox {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+.userBox {
+  background: #FFF;
+  border-radius: 12px;
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+  width: 100%;
+  padding: 40px;
+}
+
+.pageTitle {
+  font-weight: 600;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.btnCommon {
+  min-width: 100px;
+  margin-top: 20px;
+  padding: 8px 20px;
+  border-radius: 999px;
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+  color: #FFF;
+  transition: 0.5s;
+}
+
+.backBtn {
+  background: #3579a7;
+}
+
+.editBtn {
+  background: #49ABED;
+}
+
+@media (max-width: 550px){
+  .mainBox {
+    padding: 30px 20px;
+  }
+}
