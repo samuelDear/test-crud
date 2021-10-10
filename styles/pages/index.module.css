@@ -1,0 +1,58 @@
+.mainBox {
+  min-height: 100vh;
+  color: #FFF;
+  display: flex;
+  background: linear-gradient(#8825B2, #003E82 );
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.titlePage {
+  font-size: 36px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 80px;
+}
+
+.dscProduct {
+  font-family: 'Open-Sans', sans-serif;
+  color: #DDD;
+  margin-bottom: 80px;
+  font-size: 18px;
+}
+
+.principalButton {
+  background: #49ABED;
+  min-width: 150px;
+  margin-right: 25px;
+}
+
+.secundaryButton {
+  box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+  background-color: transparent;
+  border: 1px solid #FFF;
+  min-width: 150px;
+}
+
+@media (max-width: 1024px) {
+  .principalButton {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px){
+  .mainBox {
+    flex-direction: column;
+  }
+
+  .titlePage {
+    font-size: 32px;
+    margin-bottom: 60px;
+  }
+  
+  .dscProduct {
+    margin-bottom: 60px;
+  }
+}
