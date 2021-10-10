@@ -19,7 +19,7 @@ const Users = () => {
       setUsers(users);
     } catch (error) {
       // eslint-disable-next-line
-      alert('Error en peticion');
+      alert('Error in request');
     }
   }, []);
 
