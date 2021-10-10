@@ -10,9 +10,14 @@
   margin-bottom: 20px;
 }
 
+.tableBox {
+  overflow-y: auto;
+}
+
 .rowBox {
   display: flex;
   flex-direction: row;
+  min-width: 700px;
 }
 
 .btnCommon {
@@ -100,4 +105,11 @@
 
 .backBtn {
   background: #3579a7;
+}
+
+@media (max-width: 700px) {
+  .cellBox {
+    padding: 5px;
+    word-break: break-word;
+  }
 }

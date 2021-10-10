@@ -57,11 +57,11 @@ const Users = () => {
             Create User
           </button>
         </Link>
-        <div className="table-auto w-full">
+        <div className={`${classes.tableBox} table-auto w-full`}>
           <div className={`${classes.rowBox} border-b-2 border-gray-400`}>
             <div className={`w-2/12 ${classes.tableHeader}`}>ID</div>
             <div className={`w-3/12 ${classes.tableHeader}`}>Name</div>
-            <div className={`w-3/12 ${classes.tableHeader}`}>Email</div>
+            <div className={`w-4/12 ${classes.tableHeader}`}>Email</div>
             <div className={`w-5/12`}></div>
           </div>
           {users &&
@@ -80,7 +80,7 @@ const Users = () => {
                   <span>{user.name}</span>
                 </div>
                 <div
-                  className={`text-center w-3/12 flex justify-center items-center ${classes.cellBox}`}>
+                  className={`text-center w-4/12 flex justify-center items-center ${classes.cellBox}`}>
                   <span>{user.email}</span>
                 </div>
                 <div
